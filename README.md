@@ -1,4 +1,5 @@
-# ProKids - Backend
+# App de ProKids
+
 
 Sistema para la gestión de tareas y asistencia organizacional para personas neurodivergentes.
 
