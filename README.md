@@ -33,3 +33,18 @@ Sistema para la gestión de tareas y asistencia organizacional para personas neu
 - `POST /api/auth/registro` — Body: `{ nombre, correo, password, fecha_nacimiento? }`
 - `POST /api/auth/login` — Body: `{ correo, password }` — Devuelve `{ token, usuario }`
 - `GET /api/auth/perfil` — Requiere header `Authorization: Bearer <token>`
+
+### Tareas
+- `POST /api/tareas` — Requiere header `Authorization: Bearer <token>` + rol Administrador — Body: `{ que_hacer, descripcion?, frecuencia, hora_limite? }`
+- `POST /api/tareas/asignar` — Requiere header `Authorization: Bearer <token>` + rol Administrador — Body: `{ tarea_id, usuario_id }`
+- `GET /api/tareas/mis-tareas` — Requiere header `Authorization: Bearer <token>` — Devuelve `{ tareas: [...] }`
+- `PATCH /api/tareas/completar` — Requiere header `Authorization: Bearer <token>` — Body: `{ ejecucion_id }`
+
+### Dispositivos push
+- `POST /api/dispositivos` — Requiere header `Authorization: Bearer <token>` — Body: `{ fcm_token, plataforma }`
+
+### Utilidad / diagnóstico
+- `GET /api/health` — Verifica que el servidor esté corriendo
+- `GET /api/db-test` — Verifica la conexión con la base de datos
+
+

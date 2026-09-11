@@ -29,6 +29,17 @@ CREATE TABLE roles(
     descripcion VARCHAR(255)
 );
 
+CREATE TABLE representantes_pacientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    representante_id INT NOT NULL,
+    paciente_id INT NOT NULL,
+    parentesco VARCHAR(50),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(representante_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY(paciente_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+    UNIQUE KEY unico_vinculo (representante_id, paciente_id)
+);
+
 CREATE TABLE permisos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL UNIQUE,

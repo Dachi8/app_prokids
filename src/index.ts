@@ -32,3 +32,14 @@ app.get('/api/db-test', async (req, res) => {
 import authRoutes from './routes/auth.routes';
 
 app.use('/api/auth', authRoutes);
+
+import tareasRoutes from './routes/tareas.routes';
+app.use('/api/tareas', tareasRoutes);
+
+import dispositivoRoutes from './routes/dispositivo.routes';
+app.use('/api/dispositivos', dispositivoRoutes);
+
+import { iniciarJobRecordatorios } from './jobs/recordatorios.jobs';
+
+// ... después de app.listen(...)
+iniciarJobRecordatorios();
