@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Configuración de red de Serena.
+
+  El backend ProKids se ejecuta en tu propia computadora (Node/Express + MySQL
+  en XAMPP) y la app se conecta por HTTP en la red local, por ejemplo:
+      http://192.168.1.50:4000/
+
+  Android 9+ (API 28) bloquea el tráfico "cleartext" (HTTP sin cifrar) por
+  defecto en las apps que apuntan a Android 9 o superior. Aquí se permite
+  para que la app pueda hablar con el servidor local.
+
+  IMPORTANTE: si en el futuro publicas el backend con HTTPS
+  (https://tu-servidor.com/), cambia cleartextTrafficPermitted a "false"
+  y ya no será necesario este archivo.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Serena</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_chat">Serena</string>
+    <string name="nav_mood">Ánimo</string>
+    <string name="nav_routines">Rutinas</string>
+    <string name="nav_calm">Calma</string>
+</resources>
